@@ -1,0 +1,115 @@
+<text>当前时间：{{time}}</text>
+
+<view>
+  <view class='zjname'>单选按钮</view>
+  <radio-group bindchange='rgChanage'>
+    <radio value='body' checked>body</radio> 
+    <radio value='girl'>girl</radio>
+  </radio-group>
+</view>
+
+<view>
+  <view class='zjname'>划动条</view>
+  <slider bindchange='rgChanage' min='30' max='60' value='30' step='2' color='red' selected-color='yellow' show-value></slider>
+</view>
+
+<view>
+  <view class='zjname'>switch开关</view>
+  <switch bindchange='rgChanage' checked	type='checkbox'/>
+  <switch bindchange='rgChanage'	type='switch' color='red'/>
+</view>
+
+<view>
+  <view>textarea</view>
+  <textarea bindconfirm='finsh' bindinput='writetext' auto-focus='false' placeholder='请输入地址' maxlength='-1' placeholder-class='place' class='text' />
+</view>
+
+<view>
+
+  <view>
+    <view class='zjname'>普通选择器</view>
+    <text class="cpadding">选择国家：</text>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker" class="cBorder cpadding">
+        {{array[index]}}
+      </view>
+    </picker>
+  </view>
+  
+  <view>
+    <view class='zjname'>日期选择器</view>
+    <text class="cpadding">请选择日期：</text>
+    <picker mode='date' bindchange="bindPickerDate" start="2015-09-01" end="2017-12-01">
+      <view class="picker" class="cBorder cpadding">
+        {{date}}
+      </view>
+    </picker>
+  </view>
+
+  <view>
+      <view class='zjname'>时间选择器</view>
+      <text class="cpadding">请选择时间：</text>
+      <picker mode='time' bindchange="bindPickerTime">
+        <view class="picker" class="cBorder cpadding">
+          {{tds}}
+        </view>
+      </picker>
+  </view>
+
+  <view>
+     <view class='zjname'>输入框</view>
+     <label>账号 : <input class='ipt'  type="text" placeholder="账号" bindinput="myinputFunc" /></label>
+     <label>密码 : <input class='ipt' password type="text" placeholder="密码" bindinput="myinputFunc" /></label>
+  </view>
+
+  <view>
+     <view class='zjname'>多选按钮</view>
+     <checkbox-group bindchange="checkboxChange">
+        <label wx:for='{{items}}'>
+          <checkbox name='{{item.name}}' checked='{{item.checked}}' value='{{item.value}}'>{{item.value}}</checkbox>
+        </label>
+    </checkbox-group>
+  </view>
+
+  <view>
+     <view class='zjname'>icon</view>
+     <label wx:for='{{icons}}'><icon type='{{item}}' size='50'></icon></label>
+  </view>
+
+  <view>
+    <view class='zjname'>text标签</view>
+    <text>HELLO \n TOM</text>
+  </view>
+
+  <view>
+    <view class='zjname'>进度条</view>
+    <progress percent="100" stroke-width='20' active	 show-info />
+  </view>
+
+  <view>
+    <view class='zjname'>scroll-view</view>
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <view id="green" class="scroll-view-item_H bc_green"></view>
+      <view id="red"  class="scroll-view-item_H bc_red"></view>
+      <view id="yellow" class="scroll-view-item_H bc_yellow"></view>
+      <view id="blue" class="scroll-view-item_H bc_blue"></view>
+    </scroll-view>
+  </view>
+
+  <view>
+    <view class='zjname'>轮播组件</view>
+    <swiper indicator-dots  autoplay circular	>
+        <swiper-item>
+          <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"/>
+        </swiper-item>
+         <swiper-item>
+          <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg"/>
+        </swiper-item>
+         <swiper-item>
+          <image src="http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg"/>
+        </swiper-item>
+    </swiper>
+  </view>
+
+
+</view>
